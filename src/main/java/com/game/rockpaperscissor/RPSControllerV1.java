@@ -28,9 +28,8 @@ public class RPSControllerV1 {
     @GetMapping("v1/{token}/{playersMove}")
     public ResponseEntity<RPSdto> playGame(@PathVariable String token, @PathVariable String playersMove) throws RPSException {
 
-        rpsService.validateToken(token);
         rpsService.validMove(playersMove);
-        rpsService.updateAndReset();
+        rpsService.validateUpdateAndReset(token);
         String computersMove =  rpsService.playGame(playersMove);
         rpsService.calculateScore(playersMove, computersMove);
 
@@ -41,9 +40,9 @@ public class RPSControllerV1 {
     @GetMapping("v2/{token}/{playersMove}")
     public ResponseEntity<RPSdto> playGameStrategically(@PathVariable String token, @PathVariable String playersMove) throws RPSException {
 
-        rpsService.validateToken(token);
+
         rpsService.validMove(playersMove);
-        rpsService.updateAndReset();
+        rpsService.validateUpdateAndReset(token);
         String computersMove =  rpsService.playGameStrategically(playersMove);
         rpsService.calculateScore(playersMove, computersMove);
 

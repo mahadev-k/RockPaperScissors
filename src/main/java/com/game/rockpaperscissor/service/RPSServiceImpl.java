@@ -121,8 +121,9 @@ public class RPSServiceImpl implements RPSService{
     }
 
     @Override
-    public void updateAndReset() {
+    public void validateUpdateAndReset(String token) throws RPSException {
         if(totalTurns< MAX_TURNs){
+            validateToken(token);
             totalTurns++;
         }else{
            resetValues();

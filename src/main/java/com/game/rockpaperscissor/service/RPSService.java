@@ -21,7 +21,7 @@ public interface RPSService {
 
     String playGameStrategically(String input);
 
-    void updateAndReset();
+    void validateUpdateAndReset(String token) throws RPSException;
 
     RPSdto populateResponse(String computersMove);
 
