@@ -71,7 +71,7 @@
 						<manifest>
 
 							<!-- give full qualified name of your main class-->
-							<mainClass>com.game.rockpaperscissor.RockpaperscissorApplication.java</mainClass>
+							<mainClass>com.game.rockpaperscissor.RockpaperscissorApplication</mainClass>
 
 						</manifest>
 					</archive>
